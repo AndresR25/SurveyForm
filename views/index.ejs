@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+        <h3>Add Ninja</h3>
+        <form method="POST" action="/add"> 
+            <div>
+                <label for="name" >Your Name:</label>
+                <input type="text" name="name"/>
+            </div>
+            <div>
+                <label for="dojo" >Dojo Location</label>
+                <select name="dojo">
+                    <% for(let i=0;i<dojos.length;i++){ %>
+                    <option value="<%= dojos[i] %>"><%= dojos[i] %></option>
+                    <% } %>
+                  </select>
+            </div>
+            <div>
+                <label for="language" >Favorite Language</label>
+                <select name="language">
+                    <% for(let i=0;i<languages.length;i++){ %>
+                    <option value="<%= languages[i] %>" ><%= languages[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div>
+                <label for="comment">Comment</label>
+                <textarea name="comment"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Submit"/>
+            </div>
+        </form >
+        </div>
+    </div>
+</body>
+</html>
